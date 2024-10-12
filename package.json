@@ -10,6 +10,7 @@
   "packageManager": "yarn@1.22.22",
   "scripts": {
     "build": "tsc",
+    "start": "node dist/src/manual-test.js",
     "clean": "rm -rf dist",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testPathPattern=\\.test\\.ts$ --testPathIgnorePatterns=\\.int\\.test\\.ts$",
     "test:int": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testPathPattern=\\.int\\.test\\.ts$",
