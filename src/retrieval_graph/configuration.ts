@@ -3,7 +3,7 @@
  */
 import { RunnableConfig } from "@langchain/core/runnables";
 import {
-  RESPONSE_SYSTEM_PROMPT_TEMPLATE,
+  //RESPONSE_SYSTEM_PROMPT_TEMPLATE,
   QUERY_SYSTEM_PROMPT_TEMPLATE,
   RESPONSE_SYSTEM_PROMPT_TEMPLATE_2,
 } from "./prompts.js";
@@ -109,9 +109,9 @@ export function ensureConfiguration(
       configurable.responseSystemPromptTemplate ||
       RESPONSE_SYSTEM_PROMPT_TEMPLATE_2,
     responseModel:
-      configurable.responseModel || "anthropic/claude-3-5-sonnet-20240620",
+      configurable.responseModel || "openai/gpt-4o-mini",
     querySystemPromptTemplate:
       configurable.querySystemPromptTemplate || QUERY_SYSTEM_PROMPT_TEMPLATE,
-    queryModel: configurable.queryModel || "anthropic/claude-3-haiku-20240307",
+    queryModel: configurable.queryModel || "openai/gpt-4o-mini",
   };
 }
