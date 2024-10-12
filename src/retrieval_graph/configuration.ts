@@ -5,6 +5,7 @@ import { RunnableConfig } from "@langchain/core/runnables";
 import {
   RESPONSE_SYSTEM_PROMPT_TEMPLATE,
   QUERY_SYSTEM_PROMPT_TEMPLATE,
+  RESPONSE_SYSTEM_PROMPT_TEMPLATE_2,
 } from "./prompts.js";
 import { Annotation } from "@langchain/langgraph";
 
@@ -106,7 +107,7 @@ export function ensureConfiguration(
     ...indexConfig,
     responseSystemPromptTemplate:
       configurable.responseSystemPromptTemplate ||
-      RESPONSE_SYSTEM_PROMPT_TEMPLATE,
+      RESPONSE_SYSTEM_PROMPT_TEMPLATE_2,
     responseModel:
       configurable.responseModel || "anthropic/claude-3-5-sonnet-20240620",
     querySystemPromptTemplate:
