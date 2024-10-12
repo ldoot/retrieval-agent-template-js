@@ -8,6 +8,7 @@ import { StateAnnotation, InputStateAnnotation } from "./state.js";
 import { formatDocs, getMessageText, loadChatModel } from "./utils.js";
 import { z } from "zod";
 import { makeRetriever } from "./retrieval.js";
+import { BaseMessage } from "@langchain/core/messages";
 // Define the function that calls the model
 
 const SearchQuery = z.object({
@@ -18,7 +19,8 @@ async function generateQuery(
   state: typeof StateAnnotation.State,
   config?: RunnableConfig,
 ): Promise<typeof StateAnnotation.Update> {
-  const messages = state.messages;
+  //const messages = state.messages;
+  const messages: BaseMessage[] = [{content: "Greetings friend"}]
   if (messages.length === 1) {
     // It's the first user question. We will use the input directly to search.
     const humanInput = getMessageText(messages[messages.length - 1]);
