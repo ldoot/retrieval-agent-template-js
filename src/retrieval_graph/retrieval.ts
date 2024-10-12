@@ -121,7 +121,7 @@ function makeTextEmbeddings(modelName: string): Embeddings {
   }
   switch (provider) {
     case "openai":
-      return new OpenAIEmbeddings({ model });
+      return new OpenAIEmbeddings({ model, openAIApiKey: "OUR-API-KEY" });
     case "cohere":
       return new CohereEmbeddings({ model });
     default:
