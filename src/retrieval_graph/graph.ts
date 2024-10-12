@@ -19,8 +19,8 @@ async function generateQuery(
   state: typeof StateAnnotation.State,
   config?: RunnableConfig,
 ): Promise<typeof StateAnnotation.Update> {
-  //const messages = state.messages;
-  const messages: BaseMessage[] = [{content: "Greetings friend"}]
+  const messages = state.messages;
+  //const messages: BaseMessage[] = [{content: "Greetings friend"}]
   if (messages.length === 1) {
     // It's the first user question. We will use the input directly to search.
     const humanInput = getMessageText(messages[messages.length - 1]);
